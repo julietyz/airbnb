@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Saved</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h2 style="font-size: 3em">Where will you go next?</h2>
+  <p>
+    Plan your next getaway. Tap the heart of any home to remember it for the future. Your next destination is closer
+    than you think!
+  </p>
+  <ion-button style="background-color:lightgreen" (click)="navToExplore()">Find Homes</ion-button>
+  <br>
+  <ion-button (click)="navToProfile()">Profile</ion-button>
+  <ion-button (click)="navToSaved()">Saved</ion-button>
+  <ion-button (click)="navToExplore()">Explore</ion-button>
+  <ion-button (click)="navToInbox()">Inbox</ion-button>
+  <ion-button (click)="navToTrips()">Trips</ion-button>
+</ion-content>

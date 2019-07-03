@@ -1,0 +1,23 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-back-button defaultHref="home"></ion-back-button>
+        </ion-buttons>
+        <ion-title>Inbox</ion-title>
+      </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h2 style="font-size: 3em">Inbox</h2>
+  <p>
+    You have no unread messages
+  </p>
+  <p>
+    You're all caught up
+  </p>
+  <ion-button (click)="navToProfile()">Profile</ion-button>
+  <ion-button (click)="navToSaved()">Saved</ion-button>
+  <ion-button (click)="navToExplore()">Explore</ion-button>
+  <ion-button (click)="navToInbox()">Inbox</ion-button>
+  <ion-button (click)="navToTrips()">Trips</ion-button>
+</ion-content>
