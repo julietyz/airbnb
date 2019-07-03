@@ -1,22 +1,41 @@
 <ion-header>
-    <ion-toolbar>
-        <ion-buttons slot="start">
-          <ion-back-button defaultHref="home"></ion-back-button>
-        </ion-buttons>
-        <ion-title>Trips</ion-title>
-      </ion-toolbar>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Trips</ion-title>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content>
-    <h2 style="font-size: 3em">Trips</h2>
-    <h3 style="font-size: 1.5em">You have no upcoming trips.</h3>
-    Start exploring ideas for your next trip. 
-    <br>
-    <ion-button (click)="navToExplore()">Explore Airbnb</ion-button>
-    <br>
-    <ion-button (click)="navToProfile()">Profile</ion-button>
-    <ion-button (click)="navToSaved()">Saved</ion-button>
-    <ion-button (click)="navToExplore()">Explore</ion-button>
-    <ion-button (click)="navToInbox()">Inbox</ion-button>
-    <ion-button (click)="navToTrips()">Trips</ion-button>
+  <h2 style="font-size: 3em">Trips</h2>
+  <h3 style="font-size: 1.5em">You have no upcoming trips.</h3>
+  Start exploring ideas for your next trip.
+  <br>
+  <ion-button (click)="navToExplore()">Explore Airbnb</ion-button>
+  <br>
+
+  <ion-list>
+      <ion-item>
+        <ion-label>Pokémon Yellow</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Mega Man X</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>The Legend of Zelda</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Pac-Man</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Super Mario World</ion-label>
+      </ion-item>
+    </ion-list>
+
+  <ion-button (click)="navToProfile()">Profile</ion-button>
+  <ion-button (click)="navToSaved()">Saved</ion-button>
+  <ion-button (click)="navToExplore()">Explore</ion-button>
+  <ion-button (click)="navToInbox()">Inbox</ion-button>
+  <ion-button (click)="navToTrips()">Trips</ion-button>
 </ion-content>
