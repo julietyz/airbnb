@@ -55,6 +55,7 @@ export class UserService {
       if (user.length) {
         if (Authuser.password === user[0].password) {
           this.setLoggedInUser(user[0]);
+          window.localStorage.setItem('firstName', user[0].firstName);
           resolve(user[0]);
         } else {
           reject(new Error('Incorrect password'));
