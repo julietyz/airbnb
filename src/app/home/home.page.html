@@ -1,24 +1,30 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>
-      User Login
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-  Welcome!
-  <p>
-    </p>
-
-  <input type="text" name="activity" placeholder="Username">
-
-  <p>
-    </p>
-  <input type="text" name="activity" placeholder="Password">
-  <p>
-    </p>
-  <!-- <ion-button (click)="pressMe()">Enter</ion-button> -->
-  <ion-button (click)="navToProfile()">Navigate to Profile</ion-button>
-</ion-content>
+    <ion-toolbar>
+      <ion-title>
+        Register
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <div class="ion-padding">
+      Create Your Provider Account 
+      <p></p>
+      <input type="text" name="activity" placeholder="First Name" [(ngModel)]="firstName">
+      <p></p>
+      <input type="text" name="activity" placeholder="Last Name" [(ngModel)]="lastName">
+      <p></p>
+      <input type="text" name="activity" placeholder="Enail" [(ngModel)]="email">
+      <p></p>
+      <input type="text" name="activity" placeholder="Phone Number" [(ngModel)]="phone">
+      <p></p>
+      <ion-button (click)="createUser()">Register</ion-button>
+      <p></p>
+      Already Have an Account? 
+      <p></p>
+      <ion-button (click)="navToLogin()">Login</ion-button>
+    </div>
+  
+  </ion-content>
+  
 
