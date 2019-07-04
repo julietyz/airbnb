@@ -13,7 +13,7 @@ export class HomePage {
   users: Array<User> = [];
   firstName: string;
   lastName: string;
-  username: string;
+  email: string;
   password: string;
 
   constructor(
@@ -29,7 +29,7 @@ export class HomePage {
   }
   createUser() {
 
-    var newUser = new User(this.firstName, this.lastName, this.username, this.password);
+    var newUser = new User(this.firstName, this.lastName, this.email, this.password);
     this.users.push(newUser);
     this.navToLogin();
 

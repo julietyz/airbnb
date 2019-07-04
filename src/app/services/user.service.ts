@@ -24,19 +24,19 @@ export class UserService {
       {
         firstName: 'John',
         lastName: 'Doe',
-        username: 'john@mail.com',
+        email: 'john@mail.com',
         password: '123'
       },
       {
         firstName: 'Samantha',
         lastName: 'Right',
-        username: 'sam@mail.com',
+        email: 'sam@mail.com',
         password: '123'
       },
       {
         firstName: 'Julia',
         lastName: 'Richards',
-        username: 'julia@mail.com',
+        email: 'julia@mail.com',
         password: '123'
       },
     ];
@@ -48,7 +48,7 @@ export class UserService {
 
       // Please note that this will call the API noce we have created it - But for now:
       const user: any = this.users.filter(dbUser => {
-        return dbUser.username === Authuser.username;
+        return dbUser.email === Authuser.email;
       });
 
       // This logic will be on the backend we will just return success or erroe HTTP response - But for now:

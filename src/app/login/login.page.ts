@@ -10,7 +10,7 @@ import { UserService } from '../services/user.service';
 })
 export class LoginPage implements OnInit {
 
-  username: string;
+  email: string;
   password: string;
 
   constructor(
@@ -30,7 +30,7 @@ export class LoginPage implements OnInit {
   login() {
     // let authUser = new User(this.eamil,this.password); -- I would do this (add user model)
     const authUser = {
-      username: this.username,
+      email: this.email,
       password: this.password
     }
     this.userService.logIn(authUser).then(user => {
