@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { NavController, AlertController } from '@ionic/angular';
+import { UserService } from '../services/user.service';
 
 
 @Component({
@@ -9,9 +10,14 @@ import { NavController } from '@ionic/angular';
 })
 export class LoginPage implements OnInit {
 
+  username: string;
+  password: string;
+
   constructor(
-    private navCtrl: NavController
-  ) { 
+    private navCtrl: NavController,
+    private userService: UserService,
+    private alertCtrl: AlertController,
+  ) {
   }
 
   navToProfile() {
@@ -19,6 +25,35 @@ export class LoginPage implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  login() {
+    // let authUser = new User(this.eamil,this.password); -- I would do this (add user model)
+    const authUser = {
+      username: this.username,
+      password: this.password
+    }
+    this.userService.logIn(authUser).then(user => {
+      this.navCtrl.navigateForward('profile', user);
+    }).catch(err => {
+      this.presentAlert(err);
+    });
+  }
+
+  register() {
+    alert("Feature coming soon!")
+    // This should navigate to the register page:
+  }
+
+  async presentAlert(err) {
+    const alert = await this.alertCtrl.create({
+      header: 'Alert',
+      subHeader: 'Failed to login',
+      message: err,
+      buttons: ['OK']
+    });
+
+    await alert.present();
   }
 
 }

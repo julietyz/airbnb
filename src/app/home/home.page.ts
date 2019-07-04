@@ -10,11 +10,12 @@ import { User } from '../Models/user';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  providers: Array<User> = [];
+  users: Array<User> = [];
   firstName: string;
   lastName: string;
-  email: string;
-  phone: number;
+  username: string;
+  password: string;
+
   constructor(
     private alertctl: AlertController,
     private navCtrl: NavController
@@ -28,8 +29,8 @@ export class HomePage {
   }
   createUser() {
 
-    var newUser = new User(this.firstName, this.lastName, this.email, this.phone);
-    this.providers.push(newUser);
+    var newUser = new User(this.firstName, this.lastName, this.username, this.password);
+    this.users.push(newUser);
     this.navToLogin();
 
   }

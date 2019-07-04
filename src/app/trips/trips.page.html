@@ -8,33 +8,29 @@
 </ion-header>
 
 <ion-content>
-  <h2 style="font-size: 3em">Trips</h2>
-  <h3 style="font-size: 1.5em">You have no upcoming trips.</h3>
-  Start exploring ideas for your next trip.
-  <br>
-  <ion-button (click)="navToExplore()">Explore Airbnb</ion-button>
-  <br>
+  <div class="ion-padding">
+    <h2 style="font-size: 3em">Trips</h2>
+    <h3 style="font-size: 1.5em">You have no upcoming trips.</h3>
+    Start exploring ideas for your next trip.
+    <br>
+    <ion-button (click)="navToExplore()">Explore Airbnb</ion-button>
+    <br>
 
-  <ion-list>
-    <ion-item *ngFor="let item of items">
-      <div>{{item.name}}</div>
-      <div>{{item.location}}</div>
-      <div>{{item.price}}</div>
-    </ion-item>
-  </ion-list>
 
-  <ion-list>
-      <ion-item *ngFor="let item of listings">
-        <div>{{item.name}}</div>
-        <div>{{item.location}}</div>
-        <div>{{item.price}}</div>
-      </ion-item>
-    </ion-list>
-  
+    <ion-card *ngFor="let listing of listings">
+      <ion-card-header>
+        <ion-card-subtitle>{{listing.location}}</ion-card-subtitle>
+        <ion-card-title>{{listing.name}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        {{listing.description}}
+      </ion-card-content>
+    </ion-card>
 
-  <ion-button (click)="navToProfile()">Profile</ion-button>
-  <ion-button (click)="navToSaved()">Saved</ion-button>
-  <ion-button (click)="navToExplore()">Explore</ion-button>
-  <ion-button (click)="navToInbox()">Inbox</ion-button>
-  <ion-button (click)="navToTrips()">Trips</ion-button>
+    <ion-button (click)="navToProfile()">Profile</ion-button>
+    <ion-button (click)="navToSaved()">Saved</ion-button>
+    <ion-button (click)="navToExplore()">Explore</ion-button>
+    <ion-button (click)="navToInbox()">Inbox</ion-button>
+    <ion-button (click)="navToTrips()">Trips</ion-button>
+  </div>
 </ion-content>

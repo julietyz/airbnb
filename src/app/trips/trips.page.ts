@@ -9,11 +9,9 @@ import { Listing } from '../Models/listing';
 })
 export class TripsPage implements OnInit {
 
-  items: Array<any> = [];
-  email: String;
   listings: Array<Listing>;
-  listing1 = new Listing("plain", "blue", 9);
-  listing2 = new Listing("flavored", "black", 4);
+  listing1 = new Listing("Home in Cape Town", "Cape Town", 1500);
+  listing2 = new Listing("Apartment in Camps Bay", "Camps Bay", 1500);
 
 
   constructor(
@@ -21,19 +19,6 @@ export class TripsPage implements OnInit {
 
   ) {
     this.listings = [this.listing1, this.listing2];
-
-    this.items = [
-      {
-        name: "Home in Cape Town",
-        location: "Cape Town",
-        price: 1500
-      },
-      {
-        name: "Apartment in Camps Bay",
-        location: "Camps Bay",
-        price: 1500
-      }
-    ]
   }
 
   navToProfile() {
