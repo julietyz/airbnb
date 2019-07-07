@@ -1,0 +1,26 @@
+.avatar {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+
+  .togglebar {
+    background-color: #232323;
+    flex: 0 0;
+    min-width: 50px;
+    max-width: 5px;
+}
+.toggle i {
+    height: 80px;
+    font-size: 1.4em;
+    width: 100%;
+    color: var(--first-color);
+    display: flex;   
+    align-items: center;
+    justify-content: center;
+    background-color: #111;
+}
+.toggle i:hover {
+    color: var(--second-color);
+}
