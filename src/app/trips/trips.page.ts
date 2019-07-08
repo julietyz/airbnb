@@ -10,8 +10,8 @@ import { Listing } from '../Models/listing';
 export class TripsPage implements OnInit {
 
   listings: Array<Listing>;
-  listing1 = new Listing("Home in Cape Town", "Cape Town", 1500);
-  listing2 = new Listing("Apartment in Camps Bay", "Camps Bay", 1500);
+  listing1 = new Listing("Home in Cape Town", "Cape Town", 1500, "Nice Pool");
+  listing2 = new Listing("Apartment in Camps Bay", "Camps Bay", 1500, "Great View");
 
 
   constructor(

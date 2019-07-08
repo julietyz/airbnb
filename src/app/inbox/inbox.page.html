@@ -3,7 +3,12 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="home"></ion-back-button>
     </ion-buttons>
-    <ion-title>Inbox</ion-title>
+    <!-- <ion-title>Inbox</ion-title> -->
+    <ion-button (click)="navToProfile()">Profile</ion-button>
+    <ion-button (click)="navToSaved()">Saved</ion-button>
+    <ion-button (click)="navToExplore()">Explore</ion-button>
+    <ion-button (click)="navToInbox()">Inbox</ion-button>
+    <ion-button (click)="navToTrips()">Trips</ion-button>
   </ion-toolbar>
 </ion-header>
 
@@ -16,10 +21,5 @@
     <p>
       You're all caught up
     </p>
-    <ion-button (click)="navToProfile()">Profile</ion-button>
-    <ion-button (click)="navToSaved()">Saved</ion-button>
-    <ion-button (click)="navToExplore()">Explore</ion-button>
-    <ion-button (click)="navToInbox()">Inbox</ion-button>
-    <ion-button (click)="navToTrips()">Trips</ion-button>
   </div>
 </ion-content>
