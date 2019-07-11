@@ -14,5 +14,14 @@
 
 <ion-content>
   <div class="ion-padding">
+      <ion-card *ngFor="let listing of listings">
+          <ion-card-header>
+            <ion-card-subtitle>{{listing.location}}</ion-card-subtitle>
+            <ion-card-title>{{listing.name}}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            {{listing.description}}
+          </ion-card-content>
+        </ion-card>
   </div>
 </ion-content>

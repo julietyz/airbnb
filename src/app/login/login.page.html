@@ -17,8 +17,16 @@
     <p></p>
     <ion-button (click)="login()">Login</ion-button>
     <ion-button (click)="getUsers()">Get all users in DB</ion-button>
+    <ion-button (click)="getListings()">Get all listings in DB</ion-button>
+    <ion-button (click)="getBookings()">Get all bookings in DB</ion-button>
     <ion-item *ngFor="let user of users">
       {{user.firstName}}
+    </ion-item>
+    <ion-item *ngFor="let listing of listings">
+      {{listing.name}}
+    </ion-item>
+    <ion-item *ngFor="let booking of bookings">
+      {{booking.name}}
     </ion-item>
   </div>
 </ion-content>

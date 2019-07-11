@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { ListingService } from '../services/listing.service';
+
 
 
 @Component({
@@ -9,7 +11,11 @@ import { NavController } from '@ionic/angular';
 })
 export class ExplorePage implements OnInit {
 
-  constructor( private navCtrl: NavController
+  public listings: any;
+
+  constructor( 
+    private navCtrl: NavController,
+    private listingService: ListingService
     ) { }
 
   navToProfile() {
@@ -32,6 +38,10 @@ export class ExplorePage implements OnInit {
   }
 
   ngOnInit() {
+    this.listingService.getAllListings().then(res=>{
+      this.listings = res;
+    }).catch(err => {console.log(err)})
   }
+
 
 }

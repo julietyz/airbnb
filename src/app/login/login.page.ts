@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController, AlertController } from '@ionic/angular';
 import { UserService } from '../services/user.service';
+import { ListingService } from '../services/listing.service';
+import { BookingService } from '../services/booking.service';
+
 
 
 @Component({
@@ -14,11 +17,16 @@ export class LoginPage implements OnInit {
   password: string;
 
   public users: any;
+  public listings: any;
+  public bookings: any;
 
   constructor(
     private navCtrl: NavController,
     private userService: UserService,
     private alertCtrl: AlertController,
+    private listingService: ListingService,
+    private bookingService: BookingService
+
   ) {
   }
 
@@ -61,6 +69,18 @@ export class LoginPage implements OnInit {
   getUsers(){
     this.userService.getAllUsers().then(res=>{
       this.users = res;
+    }).catch(err => {console.log(err)})
+  }
+
+  getListings(){
+    this.listingService.getAllListings().then(res=>{
+      this.listings = res;
+    }).catch(err => {console.log(err)})
+  }
+
+  getBookings(){
+    this.bookingService.getAllBookings().then(res=>{
+      this.bookings = res;
     }).catch(err => {console.log(err)})
   }
 
