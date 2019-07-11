@@ -13,6 +13,8 @@ export class LoginPage implements OnInit {
   email: string;
   password: string;
 
+  public users: any;
+
   constructor(
     private navCtrl: NavController,
     private userService: UserService,
@@ -54,6 +56,12 @@ export class LoginPage implements OnInit {
     });
 
     await alert.present();
+  }
+
+  getUsers(){
+    this.userService.getAllUsers().then(res=>{
+      this.users = res;
+    }).catch(err => {console.log(err)})
   }
 
 }
