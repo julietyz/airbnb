@@ -26,22 +26,31 @@ export class UserService {
   ) {
     this.users = [
       {
+        id: 23, 
         firstName: 'John',
         lastName: 'Doe',
+        cellPhone: 9,
         email: 'john@mail.com',
-        password: '123'
+        password: '123', 
+        role: "user"
       },
       {
+        id: 25, 
         firstName: 'Samantha',
         lastName: 'Right',
+        cellPhone: 10,
         email: 'sam@mail.com',
-        password: '123'
+        password: '123', 
+        role: "user"
       },
-      {
+      {      
+        id: 26, 
         firstName: 'Julia',
         lastName: 'Richards',
+        cellPhone: 11,
         email: 'julia@mail.com',
-        password: '123'
+        password: '123', 
+        role: "user"
       },
     ];
   }

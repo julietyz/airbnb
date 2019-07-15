@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding" style="text-align: center">
+    Create Your User Account 
+    <p></p>
+    <input type="text" placeholder="First Name" [(ngModel)]="firstName">
+    <p></p>
+    <input type="text" placeholder="Last Name" [(ngModel)]="lastName">
+    <p></p>
+    <input type="text" placeholder="Email" [(ngModel)]="email">
+    <p></p>
+    <input type="text" placeholder="Password" [(ngModel)]="password">
+    <p></p>
+    <ion-button (click)="createUser()">Register</ion-button>
+    <p></p>
+    Already Have an Account? 
+    <p></p>
+    <ion-button (click)="navToLogin()">Login</ion-button>
+  </div>
+
+</ion-content>
