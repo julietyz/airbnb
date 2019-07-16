@@ -10,6 +10,7 @@ const routes: Routes = [
   { path: 'inbox', loadChildren: './inbox/inbox.module#InboxPageModule' },
   { path: 'trips', loadChildren: './trips/trips.module#TripsPageModule' },
   { path: 'reg', loadChildren: './reg/reg.module#RegPageModule' },
+  { path: 'tabs', loadChildren: './tabs/tabs.module#TabsPageModule' },
 ];
 
 @NgModule({
