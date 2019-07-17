@@ -5,16 +5,16 @@ const roles = {
 };
 
 export class User {
-    id: number;
-    firstName: string;
-    lastName: string;
-    cellPhone: number;
-    email: string;
-    password: string;
-    role: string;
+    public id: number;
+    public firstName: string;
+    public lastName: string;
+    public cellPhone: number;
+    public email: string;
+    public password: string;
+    public role: string;
 
-    constructor(newID, newFirstName, newLastName, newCellPhone, newEmail, newPassword) {
-        this.id = newID;
+    constructor(newFirstName, newLastName, newCellPhone, newEmail, newPassword) {
+        this.id;
         this.firstName = newFirstName;
         this.lastName = newLastName;
         this.cellPhone = newCellPhone;

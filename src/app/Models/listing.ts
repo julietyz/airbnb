@@ -1,11 +1,17 @@
-export class Listing {
-    name: string;
-    location: string;
-    price: number;
-    description: string;
+import { stringify } from '@angular/compiler/src/util';
 
-    constructor(nameInput, locationInput, priceInput, descriptionInput)
+export class Listing {
+    public id: number;
+    public spname: string;
+    public name: string;
+    public location: string;
+    public price: number;
+    public description: string;
+
+    constructor(spnameInput, nameInput, locationInput, priceInput, descriptionInput)
     {
+        this.id;
+        this.spname = spnameInput;
         this.name = nameInput;
         this.location = locationInput;
         this.price = priceInput;
