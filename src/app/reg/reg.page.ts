@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { NavController } from '@ionic/angular';
-import { User } from '../models/user';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-reg',
@@ -9,15 +9,18 @@ import { User } from '../models/user';
   styleUrls: ['./reg.page.scss'],
 })
 export class RegPage implements OnInit {
-  users: Array<User> = [];
   firstName: string;
   lastName: string;
   email: string;
   password: string;
+  cellPhone: number;
+  public user: any;
 
   constructor(
     private alertctl: AlertController,
-    private navCtrl: NavController
+    private navCtrl: NavController,
+    private userService: UserService
+
   ) { }
 
   pressMe() {
@@ -26,17 +29,28 @@ export class RegPage implements OnInit {
   navToLogin() {
     this.navCtrl.navigateForward("home");
   }
-  /* createUser() {
+  createUser() {
 
     const newUser = {
-      email: this.email, 
-      password: this.password
+      firstName: this.firstName,
+      lastName: this.lastName,
+      email: this.email,
+      password: this.password,
+      cellPhone: this.cellPhone,
+      role: "user"
     }
 
-    this.users.push(newUser);
-    this.navCtrl.navigateForward("profile");
+    this.userService.create(newUser).then(res=>{
+      this.user = res;
+      this.navCtrl.navigateForward('profile', {
+        queryParams: {
+          user: res
+        }
+      });
+    }).catch(err => {console.log(err)})
 
-  } */
+
+  } 
 
   async openAlert() {
     const alert = await this.alertctl.create({

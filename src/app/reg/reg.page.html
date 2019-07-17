@@ -17,6 +17,8 @@
     <p></p>
     <input type="text" placeholder="Email" [(ngModel)]="email">
     <p></p>
+    <input type="text" placeholder="CellPhone" input type="number" [(ngModel)]="cellPhone">
+    <p></p>
     <input type="text" placeholder="Password" [(ngModel)]="password">
     <p></p>
     <ion-button (click)="createUser()">Register</ion-button>
@@ -24,6 +26,9 @@
     Already Have an Account? 
     <p></p>
     <ion-button (click)="navToLogin()">Login</ion-button>
+    <p></p>
+    {{firstName}}
+    {{lastName}}
   </div>
 
 </ion-content>
