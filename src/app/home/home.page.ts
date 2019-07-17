@@ -4,7 +4,6 @@ import { UserService } from '../services/user.service';
 import { ListingService } from '../services/listing.service';
 import { BookingService } from '../services/booking.service';
 import { AuthService } from '../services/auth.service';
-import { User } from '../Models/user';
 
 
 @Component({
@@ -15,6 +14,7 @@ import { User } from '../Models/user';
 export class HomePage {
   email: string;
   password: string;
+  id: string;
 
   public users: any;
   public listings: any;
@@ -41,7 +41,10 @@ export class HomePage {
 
   login() {
     // let authUser = new User(this.eamil,this.password); -- I would do this (add user model)
-    const authUser = new User(24, "jo", "jo", 5555555, this.email, this.password);
+    const authUser = {
+      email: this.email, 
+      password: this.password
+    }
 
     this.userService.logIn(authUser).then(user => {
     this.navCtrl.navigateForward('profile', user);
@@ -67,8 +70,8 @@ export class HomePage {
     await alert.present();
   }
 
-  getUsers(){
-    this.userService.getAllUsers().then(res=>{
+  getUserById(){
+    this.userService.getById(this.id).then(res=>{
       this.users = res;
     }).catch(err => {console.log(err)})
   }
@@ -85,11 +88,25 @@ export class HomePage {
     }).catch(err => {console.log(err)})
   }
 
-/*   loginBackend(){
-    const authUser = new User("jo", "jo", this.email, this.password);
+loginBackend(){
+  const authUser = {
+    email: this.email, 
+    password: this.password
+  };
 
     this.authService.login(authUser).then(res=>{
-      this.bookings = res;
-    }).catch(err => {console.log(err)})
-  } */
+
+      const testId = localStorage.getItem("userid");
+      console.log(testId);
+
+      this.navCtrl.navigateForward('profile', {
+        queryParams: {
+          user: res
+        }
+      });
+
+    }).catch(err => {
+      this.presentAlert(err);
+  });
+}
 }

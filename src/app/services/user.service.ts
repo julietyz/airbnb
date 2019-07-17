@@ -10,7 +10,7 @@ export class UserService {
 
 import { Injectable } from '@angular/core';
 import { User } from '../Models/user';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
 @Injectable({
@@ -103,6 +103,23 @@ export class UserService {
         }
       )
 
+    });
+  }
+
+  getById(userId){
+    return new Promise((resolve, reject) => {
+      const headers = new HttpHeaders();
+
+      this.httpClient
+      .get("http://localhost:5000/api/user/getByID/" + userId, {headers})
+      .subscribe((response) => {
+          resolve(response);
+        },
+        (err) => {
+          console.log(err.error.message);
+          reject(err);
+        }
+      );
 
     });
   }

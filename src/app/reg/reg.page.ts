@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { NavController } from '@ionic/angular';
-import { User } from '../Models/user';
+import { User } from '../models/user';
 
 @Component({
   selector: 'app-reg',
@@ -26,13 +26,17 @@ export class RegPage implements OnInit {
   navToLogin() {
     this.navCtrl.navigateForward("home");
   }
-  createUser() {
+  /* createUser() {
 
-    var newUser = new User(24, this.firstName, this.lastName, 5555555, this.email, this.password);
+    const newUser = {
+      email: this.email, 
+      password: this.password
+    }
+
     this.users.push(newUser);
     this.navCtrl.navigateForward("profile");
 
-  }
+  } */
 
   async openAlert() {
     const alert = await this.alertctl.create({

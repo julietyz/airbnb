@@ -14,13 +14,15 @@
     <p></p>
     <input type="text" name="activity" placeholder="Password" type="password" [(ngModel)]="password">
     <p></p>
-    <ion-button (click)="login()">Login</ion-button>
+    <ion-button (click)="loginBackend()">Login</ion-button>
     <p></p>
     Don't have an account?
     <p></p>
     <ion-button (click)="navToReg()">Register</ion-button>
     <p></p>
-    <ion-button (click)="getUsers()">Get all users in DB</ion-button>
+    <input type="text" name="activity" placeholder="User Id" [(ngModel)]="id">
+    <p></p>
+    <ion-button (click)="getUserById()">Get User By Id</ion-button>
     <ion-button (click)="getListings()">Get all listings in DB</ion-button>
     <ion-button (click)="getBookings()">Get all bookings in DB</ion-button>
     <ion-item *ngFor="let user of users">
