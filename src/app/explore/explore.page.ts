@@ -37,6 +37,14 @@ export class ExplorePage implements OnInit {
     this.navCtrl.navigateForward("trips");
   }
 
+  navToPropDeets(listing){
+    localStorage.setItem('listingId', listing.id);
+    localStorage.setItem('listingName', listing.name);
+    localStorage.setItem('listingDesc', listing.description);
+    localStorage.setItem('listingPrice', listing.price);
+    this.navCtrl.navigateForward("prop-deets");
+  }
+
   ngOnInit() {
     this.listingService.getAllListings().then(res=>{
       this.listings = res;

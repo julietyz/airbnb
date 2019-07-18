@@ -11,6 +11,7 @@ const routes: Routes = [
   { path: 'inbox', loadChildren: './inbox/inbox.module#InboxPageModule' },
   { path: 'trips', loadChildren: './trips/trips.module#TripsPageModule' },
   { path: 'reg', loadChildren: './reg/reg.module#RegPageModule' },
+  { path: 'prop-deets', loadChildren: './prop-deets/prop-deets.module#PropDeetsPageModule' },
 ];
 
 @NgModule({

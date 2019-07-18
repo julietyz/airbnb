@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-back-button defaultHref="explore"></ion-back-button>
+        </ion-buttons>
+    <ion-title>Property Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div align="center">
+    <h2>{{listingName}}</h2>
+    <p>
+      Price: {{listingPrice}}R
+      <br>
+      Description: {{listingDesc}}
+    </p>
+    <ion-button (click)="navToBooking()">Book Now</ion-button>
+
+  </div>
+
+</ion-content>
