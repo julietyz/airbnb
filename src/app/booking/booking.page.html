@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-back-button defaultHref="explore"></ion-back-button>
+        </ion-buttons>
+    <ion-title align="center">Create A Booking</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <h2 align="center">{{listingName}}</h2>
+    <form #form="ngForm" (ngSubmit)="navToTrips()">
+        <ion-grid>
+          <ion-row color="primary" justify-content-center>
+            <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+              <div padding>
+<!--                 <ion-item>
+                  <ion-input name="start" type="text" placeholder="Starting Date" [(ngModel)]="startDate" ngModel required></ion-input>
+                </ion-item> -->
+                Starting Date:
+                <ion-item>
+                    <ion-select name="start-month" placeholder="Month" [(ngModel)]="startMonth" ngModel required>
+                        <ion-select-option value=01>January</ion-select-option>
+                        <ion-select-option value=02>Febuary</ion-select-option>
+                        <ion-select-option value=03>March</ion-select-option>
+                        <ion-select-option value=04>April</ion-select-option>
+                        <ion-select-option value=05>May</ion-select-option>
+                        <ion-select-option value=06>June</ion-select-option>
+                        <ion-select-option value=07>July</ion-select-option>
+                        <ion-select-option value=08>August</ion-select-option>
+                        <ion-select-option value=09>September</ion-select-option>
+                        <ion-select-option value=10>October</ion-select-option>
+                        <ion-select-option value=11>November</ion-select-option>
+                        <ion-select-option value=12>December</ion-select-option>
+                      </ion-select>
+                </ion-item>
+                <ion-item>
+                    <ion-input name="start-day" type="number" placeholder="Day" [(ngModel)]="startDay" ngModel required></ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-input name="start-year" type="number" placeholder="Year" [(ngModel)]="startYear" ngModel required></ion-input>
+                </ion-item>
+                <p></p>
+                Ending Date:
+                <ion-item>
+                    <ion-select name="end-month" placeholder="Month" [(ngModel)]="endMonth" ngModel required>
+                        <ion-select-option value=01>January</ion-select-option>
+                        <ion-select-option value=02>Febuary</ion-select-option>
+                        <ion-select-option value=03>March</ion-select-option>
+                        <ion-select-option value=04>April</ion-select-option>
+                        <ion-select-option value=05>May</ion-select-option>
+                        <ion-select-option value=06>June</ion-select-option>
+                        <ion-select-option value=07>July</ion-select-option>
+                        <ion-select-option value=08>August</ion-select-option>
+                        <ion-select-option value=09>September</ion-select-option>
+                        <ion-select-option value=10>October</ion-select-option>
+                        <ion-select-option value=11>November</ion-select-option>
+                        <ion-select-option value=12>December</ion-select-option>
+                      </ion-select>
+                </ion-item>
+                <ion-item>
+                    <ion-input name="end-day" type="number" placeholder="Day" [(ngModel)]="endDay" ngModel required></ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-input name="end-year" type="number" placeholder="Year" [(ngModel)]="endYear" ngModel required></ion-input>
+                </ion-item>
+              </div>
+              <div padding>
+                <ion-button size="large" type="submit" [disabled]="form.invalid" expand="block">Book Now</ion-button>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </form>
+
+</ion-content>

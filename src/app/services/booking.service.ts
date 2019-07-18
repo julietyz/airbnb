@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
 
 
 @Injectable({
@@ -24,7 +25,26 @@ export class BookingService {
           reject(err);
         }
       )
+    });
+  }
 
+  register(newBooking){
+    return new Promise((resolve, reject) => {
+      const headers = new HttpHeaders();
+
+      this.httpClient
+      .post("http://localhost:5000/api/booking", newBooking, {headers})
+      .subscribe((response: any) => {
+          console.log(response.id);
+          resolve(response);
+        },
+
+        (err) => {
+          console.log(err.error.message);
+          console.log(err.error);
+          reject(err.error);
+        }
+      );
 
     });
   }

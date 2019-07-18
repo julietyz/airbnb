@@ -27,7 +27,7 @@ export class PropDeetsPage implements OnInit {
   }
 
   navToBooking() {
-    this.navCtrl.navigateForward("trips");
+    this.navCtrl.navigateForward("booking");
   }
 
 }

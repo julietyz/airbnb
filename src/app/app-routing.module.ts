@@ -12,6 +12,7 @@ const routes: Routes = [
   { path: 'trips', loadChildren: './trips/trips.module#TripsPageModule' },
   { path: 'reg', loadChildren: './reg/reg.module#RegPageModule' },
   { path: 'prop-deets', loadChildren: './prop-deets/prop-deets.module#PropDeetsPageModule' },
+  { path: 'booking', loadChildren: './booking/booking.module#BookingPageModule' },
 ];
 
 @NgModule({
