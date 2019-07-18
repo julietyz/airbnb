@@ -28,7 +28,8 @@ export class AuthService {
         },
         (err) => {
           console.log(err.error.message);
-          reject(err);
+          console.log(err.error);
+          reject(err.error);
         }
       );
 

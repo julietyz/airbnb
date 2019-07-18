@@ -29,6 +29,7 @@ export class HomePage {
     private authService: AuthService
 
   ) {
+    console.log("in home");
   }
   
   navToProfile() {
