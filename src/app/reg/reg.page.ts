@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { NavController } from '@ionic/angular';
 import { UserService } from '../services/user.service';
+import { AuthService } from '../services/auth.service';
+
 
 @Component({
   selector: 'app-reg',
@@ -19,13 +21,11 @@ export class RegPage implements OnInit {
   constructor(
     private alertctl: AlertController,
     private navCtrl: NavController,
+    private authService: AuthService,
     private userService: UserService
 
   ) { }
 
-  pressMe() {
-    this.openAlert();
-  }
   navToLogin() {
     this.navCtrl.navigateForward("home");
   }
@@ -40,27 +40,31 @@ export class RegPage implements OnInit {
       role: "user"
     }
 
-    this.userService.create(newUser).then(res=>{
+    this.authService.register(newUser).then(res=>{
       this.user = res;
       this.navCtrl.navigateForward('profile', {
         queryParams: {
           user: res
         }
       });
-    }).catch(err => {console.log(err)})
+    }).catch(err => {
+      this.presentAlert(err);
+    });
 
 
   } 
 
-  async openAlert() {
+  async presentAlert(err) {
     const alert = await this.alertctl.create({
-      header: 'Login Attempted',
-      message: 'You attempted to login but we do not have this feature yet.',
+      header: 'Alert',
+      subHeader: 'Failed to register',
+      message: err,
       buttons: ['OK']
     });
 
     await alert.present();
   }
+
   ngOnInit() {
   }
 
