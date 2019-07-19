@@ -39,9 +39,6 @@ export class ExplorePage implements OnInit {
 
   navToPropDeets(listing){
     localStorage.setItem('listingId', listing.id);
-    localStorage.setItem('listingName', listing.name);
-    localStorage.setItem('listingDesc', listing.description);
-    localStorage.setItem('listingPrice', listing.price);
     this.navCtrl.navigateForward("prop-deets");
   }
 

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController, AlertController } from '@ionic/angular';
 import { BookingService } from '../services/booking.service';
+import { ListingService } from '../services/listing.service';
+
 
 
 
@@ -11,9 +13,9 @@ import { BookingService } from '../services/booking.service';
 })
 export class BookingPage implements OnInit {
   public listingId: string;
-  public listingName: string;
-  public listingPrice: string;
   public userId: string;
+
+  public listings: any;
 
   public newBooking: any;
   public booking: any;
@@ -32,17 +34,21 @@ export class BookingPage implements OnInit {
   constructor(
     private navCtrl: NavController,
     private alertCtrl: AlertController,
-    private bookingService: BookingService
+    private bookingService: BookingService,
+    private listingService: ListingService
+
 
   ) { 
     this.listingId = window.localStorage.getItem("listingId");
-    this.listingName = window.localStorage.getItem("listingName");
-    this.listingPrice = window.localStorage.getItem("listingPrice");
 
     this.userId = window.localStorage.getItem("userid");
   }
 
   ngOnInit() {
+    this.listingService.getById(this.listingId).then(res=>{
+      this.listings = res;
+      console.log(this.listings);
+    }).catch(err => {console.log(err)})
   }
 
   navToTrips(){

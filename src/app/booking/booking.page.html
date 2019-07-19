@@ -8,8 +8,7 @@
 </ion-header>
 
 <ion-content>
-
-  <h2 align="center">{{listingName}}</h2>
+  <h2 align="center" *ngFor="let listing of listings">{{listing.name}}</h2>
     <form #form="ngForm" (ngSubmit)="navToTrips()">
         <ion-grid>
           <ion-row color="primary" justify-content-center>
@@ -73,5 +72,4 @@
           </ion-row>
         </ion-grid>
       </form>
-
 </ion-content>

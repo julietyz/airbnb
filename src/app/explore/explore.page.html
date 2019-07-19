@@ -13,20 +13,20 @@
 </ion-header>
 
 <ion-content>
-  <div class="ion-padding">
+  <div class="ion-padding" align="center">
     <ion-card *ngFor="let listing of listings" (click)="navToPropDeets(listing)">
       <ion-slides pager="true">
-        <!-- <ion-slide *ngFor="let img of listing.imgUrl">
+        <ion-slide *ngFor="let img of listing.imgUrl">
           <img src={{img}} />
-        </ion-slide> -->
+        </ion-slide>
       </ion-slides>
       <ion-card-header>
         <ion-card-subtitle>{{listing.location}}</ion-card-subtitle>
         <ion-card-title>{{listing.name}}</ion-card-title>
       </ion-card-header>
-      <ion-card-content>
+      <!-- <ion-card-content>
         {{listing.description}}
-      </ion-card-content>
+      </ion-card-content> -->
     </ion-card>
   </div>
 </ion-content>
