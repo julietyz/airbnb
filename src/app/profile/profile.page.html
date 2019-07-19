@@ -19,17 +19,17 @@
         </div>
     </div> -->
     
-  <div class="ion-padding" align="center">
-    <h2 style="font-size: 3em">Hi, I'm {{firstName}}</h2>
+  <div class="ion-padding" align="center" *ngFor="let user of users">
+    <h2 style="font-size: 3em">Hi, I'm {{user.firstName}}</h2>
 
     <ion-avatar class="avatar">
       <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
     </ion-avatar>
 
     <p>
-      <b>Email:</b> {{email}}
+      <b>Email:</b> {{user.email}}
       <br>
-      <b>Phone Number:</b> {{cellPhone}}
+      <b>Phone Number:</b> {{user.cellPhone}}
       <br>
       <b>Number of Bookings Made:</b> 23
       <br>

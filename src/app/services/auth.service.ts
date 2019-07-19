@@ -21,9 +21,6 @@ export class AuthService {
       .subscribe((response: any) => {
           console.log(response.id);
           localStorage.setItem('userid', response.id);
-          localStorage.setItem('firstName', response.firstName);
-          localStorage.setItem('cellPhone', response.cellPhone);
-          localStorage.setItem('email', response.email);
           resolve(response);
         },
         (err) => {
@@ -43,11 +40,10 @@ export class AuthService {
       this.httpClient
       .post("http://localhost:5000/api/auth/register", newUser, {headers})
       .subscribe((response: any) => {
-          console.log(response.id);
-          localStorage.setItem('userid', newUser.id);
-          localStorage.setItem('firstName', newUser.firstName);
+          localStorage.setItem('userid', response.insertId);
+/*           localStorage.setItem('firstName', newUser.firstName);
           localStorage.setItem('cellPhone', newUser.cellPhone);
-          localStorage.setItem('email', newUser.email);
+          localStorage.setItem('email', newUser.email); */
           resolve(response);
         },
 

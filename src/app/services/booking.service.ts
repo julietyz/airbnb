@@ -48,4 +48,24 @@ export class BookingService {
 
     });
   }
+
+  getByUserId(userId){
+    return new Promise((resolve, reject) => {
+      const headers = new HttpHeaders();
+
+      this.httpClient
+      .get("http://localhost:5000/api/booking/getByUserID/" + userId, {headers})
+      .subscribe((response) => {
+          resolve(response);
+        },
+        (err) => {
+          console.log(err.error.message);
+          reject(err);
+        }
+      );
+
+    });
+  }
+
+
 }

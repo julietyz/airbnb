@@ -12,9 +12,7 @@ export class ProfilePage implements OnInit {
 
   // private currentUser: User;
   public id: string;
-  public firstName: string;
-  public cellPhone: string;
-  public email: string;
+  public users: any;
   
 
   constructor(
@@ -23,9 +21,6 @@ export class ProfilePage implements OnInit {
   ) {
   
     this.id = window.localStorage.getItem('userid');
-    this.firstName = window.localStorage.getItem('firstName');
-    this.cellPhone = window.localStorage.getItem('cellPhone');
-    this.email = window.localStorage.getItem('email');
     // const currentUser = this.userService.getLoggedInUser();
   }
 
@@ -52,6 +47,11 @@ export class ProfilePage implements OnInit {
     this.navCtrl.navigateForward("trips");
   }
   ngOnInit() {
+    this.userService.getById(this.id).then(res=>{
+      this.users = res;
+    }).catch(err => {console.log(err)})
+
+
   }
 
 }

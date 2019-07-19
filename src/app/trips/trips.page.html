@@ -8,17 +8,37 @@
     <ion-button (click)="navToSaved()">Saved</ion-button>
     <ion-button (click)="navToExplore()">Explore</ion-button>
     <ion-button (click)="navToInbox()">Inbox</ion-button>
-    <ion-button (click)="navToTrips()">Trips</ion-button>
+    <ion-button (click)="navToTrips()">Your Trips</ion-button>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="ion-padding">
+  <div class="ion-padding" align="center">
     <h2 style="font-size: 3em">Trips</h2>
-    <h3 style="font-size: 1.5em">You have no upcoming trips.</h3>
+    <!-- <h3 style="font-size: 1.5em">You have no upcoming trips.</h3>
     Start exploring ideas for your next trip.
     <br>
     <ion-button (click)="navToExplore()">Explore Airbnb</ion-button>
     <br>
+    <ion-button (click)="setListings()">Set Listings</ion-button>
+    <br> -->
+    <ion-card *ngFor="let listAndBook of listAndBooks">
+      <ion-card-header>
+          <ion-card-subtitle>{{listAndBook.intro}}</ion-card-subtitle>
+        <ion-card-title>{{listAndBook.name}}</ion-card-title>
+        <p></p>
+        <ion-card-subtitle>{{listAndBook.location}}</ion-card-subtitle>
+        <ion-card-subtitle>{{listAndBook.dateFrom}}</ion-card-subtitle>
+        <ion-card-subtitle>{{listAndBook.dateTo}}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+          <ion-slides pager="true">
+              <ion-slide *ngFor="let img of listAndBook.imgUrl">
+                <img src={{img}} />
+              </ion-slide>
+            </ion-slides>
+      </ion-card-content>
+    </ion-card>
   </div>
+
 </ion-content>

@@ -4,8 +4,6 @@ import { BookingService } from '../services/booking.service';
 import { ListingService } from '../services/listing.service';
 
 
-
-
 @Component({
   selector: 'app-booking',
   templateUrl: './booking.page.html',

@@ -13,6 +13,7 @@ const routes: Routes = [
   { path: 'reg', loadChildren: './reg/reg.module#RegPageModule' },
   { path: 'prop-deets', loadChildren: './prop-deets/prop-deets.module#PropDeetsPageModule' },
   { path: 'booking', loadChildren: './booking/booking.module#BookingPageModule' },
+  { path: 'congrats', loadChildren: './congrats/congrats.module#CongratsPageModule' },
 ];
 
 @NgModule({

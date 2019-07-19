@@ -34,8 +34,9 @@ export class ListingService {
 
       this.httpClient
       .get("http://localhost:5000/api/listing/getByID/" + listingId, {headers})
-      .subscribe((response) => {
+      .subscribe((response: any) => {
           resolve(response);
+
         },
         (err) => {
           console.log(err.error.message);
@@ -45,5 +46,7 @@ export class ListingService {
 
     });
   }
+
+
 
 }
