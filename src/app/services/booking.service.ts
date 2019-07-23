@@ -55,7 +55,7 @@ export class BookingService {
 
       this.httpClient
       .get("http://localhost:5000/api/booking/getByUserID/" + userId, {headers})
-      .subscribe((response) => {
+      .subscribe((response: any) => {
           resolve(response);
         },
         (err) => {

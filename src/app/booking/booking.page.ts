@@ -58,6 +58,7 @@ export class BookingPage implements OnInit {
       userID: this.userId,
       dateFrom: this.dateFrom,
       dateTo: this.dateTo,
+      status: "Pending",
     }
 
     console.log(this.newBooking);

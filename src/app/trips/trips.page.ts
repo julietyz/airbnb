@@ -67,11 +67,12 @@ export class TripsPage implements OnInit {
         this.listingService.getById(booking.listingID).then(res => {
           //console.log(res);
           this.dummy = {
-            intro: "You stayed at",
+            intro: "You Booked",
             name: res[0].name,
             dateTo: "To: " + booking.dateTo,
             dateFrom: "From: " + booking.dateFrom,
             location: "In " + res[0].location,
+            status: "Status: " + booking.status,
             imgUrl: res[0].imgUrl
           }
           this.listAndBooks.push(this.dummy);
