@@ -29,7 +29,7 @@ export class HomePage {
     private authService: AuthService
 
   ) {
-    console.log("in home");
+    //console.log("in home");
   }
   
   navToProfile() {

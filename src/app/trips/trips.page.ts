@@ -10,7 +10,7 @@ import { ListingService } from '../services/listing.service';
   templateUrl: './trips.page.html',
   styleUrls: ['./trips.page.scss'],
 })
-export class TripsPage implements OnInit {
+export class TripsPage{
   public userId: string;
 
   public bookings: any;
@@ -49,7 +49,10 @@ export class TripsPage implements OnInit {
     this.navCtrl.navigateForward("trips");
   }
 
-  ngOnInit() {
+  ionViewWillEnter() {
+    this.bookings = []; 
+    this.listAndBooks = [];
+    
     this.bookingService.getByUserId(this.userId).then(res => {
       //this.userId
       this.bookings = res;
